@@ -1,0 +1,8 @@
+<h5 (click)="openModal()">{{ restaurant.name }}</h5>
+<p>{{ restaurant.description }}</p>
+
+<!-- prosledjuje child component-i putanje, ocene i rating -->
+<p>Rating: <app-rating [grade]="restaurant.rating" [fullIcon]="'star-full.png'" [emptyIcon]="'star-empty.png'"></app-rating></p>
+<p>Price: <app-rating [grade]="restaurant.price" [fullIcon]="'coin-full.png'" [emptyIcon]="'coin-empty.png'"></app-rating></p>
+
+

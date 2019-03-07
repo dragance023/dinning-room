@@ -1,0 +1,43 @@
+<h3>{{ restaurant?.name }}</h3>
+<div class="row">
+  <div class="col-6">
+    <!-- ispis radnih dana prvo proveravam da li je radni dan, ako nije uopste ga ne ispisujem -->
+    <p><u>Working Hours</u></p>
+    <ul>
+      <li *ngIf="restaurant?.days[1]">Monday: {{ restaurant?.days[1].opens }} - {{ restaurant?.days[1].closes }}</li>
+      <li *ngIf="restaurant?.days[2]">Tuesday: {{ restaurant?.days[2].opens }} - {{ restaurant?.days[2].closes }}</li>
+      <li *ngIf="restaurant?.days[3]">Wednesday: {{ restaurant?.days[3].opens }} - {{ restaurant?.days[3].closes }}</li>
+      <li *ngIf="restaurant?.days[4]">Thursday: {{ restaurant?.days[4].opens }} - {{ restaurant?.days[4].closes }}</li>
+      <li *ngIf="restaurant?.days[5]">Friday: {{ restaurant?.days[5].opens }} - {{ restaurant?.days[5].closes }}</li>
+      <li *ngIf="restaurant?.days[6]">Saturday: {{ restaurant?.days[6].opens }} - {{ restaurant?.days[6].closes }}</li>
+      <li *ngIf="restaurant?.days[7]">Sunday: {{ restaurant?.days[7].opens }} - {{ restaurant?.days[7].closes }}</li>
+    </ul>
+  </div>
+  <!-- lokacija restorana -->
+  <div class="col-6">
+    <p><u>Address</u></p>
+    <ul>
+      <li>{{ restaurant?.location }}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of menu?.items">
+              <td>{{ i.name }} </td>
+              <td>{{ i.price }} </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+
